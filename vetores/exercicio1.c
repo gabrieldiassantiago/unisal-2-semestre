@@ -1,36 +1,36 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-//1. Faça um programa em C que armazene 15 números inteiros em um vetor e depois permita que o usuário digite
-//um número inteiro para ser buscado no vetor, se for encontrado o programa deve imprimir a posição desse
-//número no vetor, caso contrário, deve imprimir a mensagem: "Nao encontrado!".
-//refatorar codigo
+void preencher_vetor(int v[], int tamanho) {
+  srand(time(NULL));
+  for (int i = 0; i < tamanho; i++) {
+    v[i] = rand() % 10; //gera valores de 0 ate a 10
+  }
+}
 
-int main()
-{
-    
-    int m[15];
+void encontrar(int v[], int tamanho, int valor_procurado) {
+  int achou = 0;
+  int posicao = 0;
+  for (int i = 0; i < tamanho; i++) {
+    if (valor_procurado == v[i]) {
+      printf("Achei! O valor %d esta na posicao %d.\n", valor_procurado, i);
+      return; //fecha a funcao
+    } 
+  }
+  printf("Nao achei. O valor %d nao esta no vetor.\n", valor_procurado);
 
-    int i = 0;
-    int valor_procurado;
-    int achou = 0;
-    int posicao = 0;
-    
-    scanf("%d", &valor_procurado);
-    
-   for (i = 0; i <= 15; i++) {
-        if (m[i] == valor_procurado) {
-            achou = 1;
-            posicao = i;
-            break;
-        } else {
-            achou = 0;
-        }
-    }
-    
-    if (achou == 1) {
-        printf("Achei e a posição %d", posicao);
-    } else if (achou == 0){
-        printf("Não achei");
-    }
-    
+}
+
+
+int main() {
+  int tamanho = 15;
+  int m[tamanho];
+  int valor_procurado;
+
+  preencher_vetor(m, tamanho);
+
+  scanf("%d", &valor_procurado);
+
+  encontrar(m, tamanho, valor_procurado);  
 }
