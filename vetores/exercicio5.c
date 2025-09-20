@@ -49,3 +49,52 @@ int main() {
 
   return 0;
 }
+
+
+//código refatarado com função
+
+/*
+#include <stdio.h>
+
+void ler_notas(int prova1[], int prova2[], int tamanho) {
+  for (int i = 0; i < tamanho; i++) {
+    printf("Digite a nota da prova 1 do aluno %d: ", i + 1);
+    scanf("%d", &prova1[i]);
+    printf("Digite a nota da prova 2 do aluno %d: ", i + 1);
+    scanf("%d", &prova2[i]);
+  }
+}
+
+void calcular_media(int prova1[], int prova2[], int media[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        media[i] = (prova1[i] + prova2[i]) / 2;
+    }
+}
+ 
+void classificar_alunos(int media[], int classificao[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        if (media[i] >= 6) {
+            classificao[i] = 1;
+        } else {
+            classificao[i] = 2;
+        }
+    }
+}
+
+int main() {
+  int tamanho = 15;
+  int prova1[tamanho];
+  int prova2[tamanho], classificao[tamanho]; //1 aprovado, 2 reprovado
+  int media[tamanho];
+  ler_notas(prova1, prova2, tamanho);
+    calcular_media(prova1, prova2, media, tamanho);
+    classificar_alunos(media, classificao, tamanho);
+
+    for (int i = 0; i < tamanho; i++) {
+        printf("Notas do aluno %d: Prova 1 = %d, Prova 2 = %d, Média = %d, Classificação = %s \n", i + 1, prova1[i], prova2[i], media[i], 
+            classificao[i] == 1 ? "Aprovado": "Reprovado");
+    }
+    
+}
+*/
+
