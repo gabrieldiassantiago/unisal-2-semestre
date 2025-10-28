@@ -9,12 +9,13 @@
     r -> ele apenas lê um arquivo, e dá erro se não encontrar
     w -> ele cria se não existir
     a -> anexaao final do arquivo para continuar escrevendo, abre para continuar usando como está
-
 */
 
 int main(int argc, char *argv[]) {
     
-	FILE *arq;
+	/*
+
+FILE *arq;
 	
 	char string[100];
 	int i;
@@ -29,8 +30,37 @@ int main(int argc, char *argv[]) {
 	
 	for (i = 0; i < strlen(string); i++) { //strlen(variavel) -> retorna o tamanho 
 		fputc(string[i], arq);
-		fclose(arq);
 	}
+    
+    fclose(arq);
 	
 	return 0;
+    */
+
+   FILE *arq;
+
+   char c;
+
+   arq = fopen("arquivo.txt", "r");
+
+    int fgetc(FILE *arq);
+
+
+
+    if (arq == NULL) {
+        printf("ERRO");
+        exit(1);
+    }
+
+    for (int i = 0; i < 10; i++) {
+        c = fgetc(arq); //fgetc (ele vai pulando [][][] de cada memoria ou seja, os caracteres)
+        printf("%c", c);
+    }
+    
+    fclose(arq);
+
+    
+
+
+
 }
