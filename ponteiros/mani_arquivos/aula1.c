@@ -45,6 +45,8 @@ FILE *arq;
 
     int fgetc(FILE *arq);
 
+    int valor = 5, valor2 = 2;
+
 
 
     if (arq == NULL) {
@@ -54,9 +56,13 @@ FILE *arq;
 
     for (int i = 0; i < 10; i++) {
         c = fgetc(arq); //fgetc (ele vai pulando [][][] de cada memoria ou seja, os caracteres)
-        printf("%c", c);
+        printf("%c\n", c);
+        printf("%p\n", &c);
     }
-    
+
+
+    printf("%p\n", &c);
+
     fclose(arq);
 
     
