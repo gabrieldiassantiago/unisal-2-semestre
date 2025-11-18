@@ -7,7 +7,7 @@ int *criarVetor(int N) {
     if (vetor == NULL)
     {
         printf("Erro na alocação de memória!\n");
-        return -1;
+        return 1;
     }
 
     for (int i = 0; i < N; i++) {
